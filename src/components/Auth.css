@@ -1,0 +1,61 @@
+main.auth-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-15%);
+  height: 100%;
+  font-size: 0.8rem;
+}
+
+.auth-logo {
+  height: 15%;
+  
+}
+
+.auth-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  gap: 1rem;
+  min-width: 20rem;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.auth-label {
+  align-self: flex-start;
+  font-weight: 500;
+}
+
+.auth-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+/* Контрастная кнопка */
+.auth-button {
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  background-color: var(--dark);
+  color: var(--light);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .auth-button {
+    background-color: var(--light);
+    color: var(--dark);
+  }
+}
