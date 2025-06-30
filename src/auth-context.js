@@ -2,8 +2,9 @@ import { createContext, useContext } from "react";
 
 const AuthContext = createContext({
   token: "",
-  onLogin: () => {},
-  onLogout: () => {},
+  onLogin: async () => {},
+  onLogout: async () => {},
+  onRefreshAccessToken: async () => {},
 });
 
 const useAuth = () => {
