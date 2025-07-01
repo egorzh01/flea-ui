@@ -2,8 +2,9 @@ import { Route, Routes } from "react-router";
 import Home from "./components/Home";
 import Auth from "./components/Auth";
 import { AuthProvider, ProtectedRoute } from "./AuthProvider";
-import Admin from "./components/Admin";
+import Places from "./components/Places";
 import Layout from "./components/Layout";
+import Items from "./components/Items";
 
 export default function App() {
   return (
@@ -19,10 +20,18 @@ export default function App() {
             }
           />
           <Route
-            path="/admin"
+            path="/places"
             element={
               <ProtectedRoute>
-                <Admin />
+                <Places />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/items"
+            element={
+              <ProtectedRoute>
+                <Items />
               </ProtectedRoute>
             }
           />

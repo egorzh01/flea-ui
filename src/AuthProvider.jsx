@@ -6,7 +6,6 @@ import axios from "axios";
 
 const authAPI = axios.create({
   baseURL: "http://localhost:8000/api/auth",
-  withCredentials: true, // если используешь куки
 });
 
 let refreshPromise = null;
