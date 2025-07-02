@@ -11,7 +11,6 @@
   --dark: #414141;
   color: var(--dark);
   background-color: var(--light);
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,4 +19,22 @@
     color: var(--light);
     background-color: var(--dark);
   }
+}
+
+.scrollarea {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.scrollarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.scrollarea::-webkit-scrollbar-track {
+  background: transparent;
 }
