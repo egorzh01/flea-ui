@@ -26,7 +26,9 @@ export default function App() {
                 <Places />
               </ProtectedRoute>
             }
-          />
+          >
+            <Route path=":placeUID" element={<Places />} />
+          </Route>
           <Route
             path="/items"
             element={

@@ -1,6 +1,8 @@
 import { NavLink } from "react-router";
+import { useAuth } from "../auth-context";
 
 const Navigation = () => {
+  const { onLogout } = useAuth();
   return (
     <nav className="absolute bottom-12 left-1/2 z-50 flex -translate-x-1/2 gap-7 overflow-hidden rounded-2xl border px-4">
       <div className="flex gap-3">
@@ -131,7 +133,8 @@ const Navigation = () => {
       </div>
       <div className="flex gap-3">
         <NavLink
-          to="/profile"
+          onClick={onLogout}
+          // to="/profile"
           className="group flex flex-col items-center rounded py-4"
         >
           {({ isActive }) => (

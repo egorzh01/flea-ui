@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api",
-  withCredentials: true, // если используешь куки
+  baseURL: "/api",
+  withCredentials: true,
 });
 
 let getAccessToken = () => "";
@@ -17,7 +17,6 @@ export function setRefreshAccessToken(fn) {
   refreshAccessToken = fn;
 }
 
-// Добавим интерцептор
 api.interceptors.request.use((config) => {
   const accessToken = getAccessToken();
   if (accessToken) {
@@ -45,7 +44,7 @@ api.interceptors.response.use(
     } catch (err) {
       return Promise.reject(err);
     }
-  }
+  },
 );
 
 export default api;
