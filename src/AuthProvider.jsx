@@ -4,10 +4,6 @@ import { Navigate, useLocation, useNavigate } from "react-router";
 import { setAccessTokenGetter, setRefreshAccessToken } from "./api";
 import axios from "axios";
 
-const authAPI = axios.create({
-  baseURL: "http://localhost:8000/api/auth",
-});
-
 let refreshPromise = null;
 
 function AuthProvider({ children }) {
@@ -24,8 +20,8 @@ function AuthProvider({ children }) {
 
     refreshPromise = (async () => {
       try {
-        const res = await authAPI.post(
-          "/refresh_token/",
+        const res = await axios.post(
+          "api/auth/refresh_token/",
           {},
           {
             headers: {
@@ -73,8 +69,8 @@ function AuthProvider({ children }) {
   const handleLogin = async (username, password) => {
     if (!username || !password) return;
 
-    const res = await authAPI.post(
-      "/login/",
+    const res = await axios.post(
+      "api/auth/login/",
       {
         username: username,
         password: password,
@@ -88,7 +84,7 @@ function AuthProvider({ children }) {
 
   async function handleLogout() {
     try {
-      await authAPI.delete("/refresh_token/", {
+      await axios.delete("api/auth/refresh_token/", {
         headers: {
           "X-CSRF-Token": document.cookie?.match(
             /flea_csrf_token=([^;]+)/,
